@@ -26,18 +26,3 @@ resource "google_compute_instance" "test" {
     subnetwork = google_compute_subnetwork.subnet.id
   }
 }
-
-
-resource "google_storage_bucket" "bucket" {
-    name = terraform-state-devops-project_48jjchcvnhf
-    location = "US"
-    storage_class = "STANDARD"
-
-   versioning {
-     enabled = true
-   }
-
-   lifecycle {
-     ignore_changes = [ true ]
-   }
-}
